@@ -1,0 +1,57 @@
+{
+  "target": "https://example.com/",
+  "status_code": 200,
+  "scanned_at": "2026-10-22T14:03:16",
+  "findings": [
+    {
+      "check": "HTTPS",
+      "status": "PASS",
+      "detail": "Uses HTTPS"
+    },
+    {
+      "check": "Content-Security-Policy",
+      "status": "FAIL",
+      "detail": "Missing. Mitigates XSS and data injection. Recommended: default-src 'self'"
+    },
+    {
+      "check": "Strict-Transport-Security",
+      "status": "FAIL",
+      "detail": "Missing. Forces HTTPS. Recommended: max-age=31536000; includeSubDomains"
+    },
+    {
+      "check": "X-Frame-Options",
+      "status": "FAIL",
+      "detail": "Missing. Prevents clickjacking. Recommended: DENY or SAMEORIGIN"
+    },
+    {
+      "check": "X-Content-Type-Options",
+      "status": "FAIL",
+      "detail": "Missing. Stops MIME-type sniffing. Recommended: nosniff"
+    },
+    {
+      "check": "Referrer-Policy",
+      "status": "FAIL",
+      "detail": "Missing. Limits referrer data leakage. Recommended: strict-origin-when-cross-origin"
+    },
+    {
+      "check": "Permissions-Policy",
+      "status": "FAIL",
+      "detail": "Missing. Restricts browser features. Recommended: geolocation=(), camera=()"
+    },
+    {
+      "check": "Info leak: Server",
+      "status": "WARN",
+      "detail": "Exposes 'cloudflare'. Consider hiding it."
+    },
+    {
+      "check": "CORS (Origin: https://evil.com)",
+      "status": "PASS",
+      "detail": "Untrusted origin not allowed"
+    },
+    {
+      "check": "CORS (Origin: null)",
+      "status": "PASS",
+      "detail": "Untrusted origin not allowed"
+    }
+  ]
+}
